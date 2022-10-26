@@ -1,0 +1,313 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --sft-orange: hsl(35, 77%, 62%);
+  --sft-red: hsl(5, 85%, 63%);
+  --off-white: hsl(36, 100%, 99%);
+  --grayish-blue: hsl(233, 8%, 79%);
+  --dark-grayish-blue: hsl(236, 13%, 42%);
+  --very-dark-blue: hsl(240, 100%, 5%);
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url(./fonts/Inter-Regular.ttf);
+  /* line 20 is not necessary unless you've got multiply font formats like Woff, SVG, Tof... */
+  src: url(./fonts/Inter-Regular.ttf) format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url(./fonts/Inter-Bold.ttf);
+  src: url(./fonts/Inter-Bold.ttf) format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url(./fonts/Inter-ExtraBold.ttf);
+  src: url(./fonts/Inter-ExtraBold.ttf) format("truetype");
+  font-weight: 800;
+  font-style: normal;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 0.95rem;
+  background-color: var(--off-white);
+  color: var(--dark-grayish-blue);
+}
+
+button {
+  outline: none;
+  border: none;
+  font-family: "Inter", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  min-width: 150px;
+  padding: 15px;
+  cursor: pointer;
+  color: var(--off-white);
+  background-color: var(--sft-red);
+}
+
+button:hover {
+  background-color: var(--very-dark-blue);
+}
+
+p {
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.wrapper {
+  min-height: inherit;
+  max-width: 1240px;
+  margin: auto;
+  padding: 10px;
+}
+
+/* Header Styles */
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+}
+
+.header .logo {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  object-position: center;
+}
+
+.header nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+}
+
+@media (max-width: 768px) {
+  .header nav {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 75%;
+    background-color: var(--off-white);
+    padding: 18px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    gap: 1.3em;
+  }
+
+  .header nav.active {
+    display: flex;
+  }
+}
+
+.header nav a {
+  text-decoration: none;
+  font-family: inherit;
+  text-transform: capitalize;
+  color: inherit;
+}
+
+.header nav a:hover {
+  color: var(--sft-red);
+}
+
+.header .toggle-button {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .header .toggle-button {
+    display: block;
+    z-index: 10;
+  }
+}
+
+/* Showcase Styles */
+.showcase {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 1.5em;
+  margin-bottom: 2em;
+}
+
+@media (max-width: 768px) {
+  .showcase {
+    flex-direction: column;
+    gap: 3em;
+  }
+}
+
+.showcase-caption {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5em;
+}
+
+@media (max-width: 768px) {
+  .showcase-caption {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.showcase-caption .showcase-img {
+  grid-column: span 2;
+  max-height: 300px;
+  width: 100%;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .showcase-caption .showcase-img {
+    aspect-ratio: 1;
+  }
+}
+
+.showcase-caption .showcase-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.showcase-caption h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  max-width: 300px;
+  line-height: 0.96;
+  color: var(--very-dark-blue);
+}
+
+@media (max-width: 768px) {
+  .showcase-caption h1 {
+    max-width: 100%;
+  }
+}
+
+.showcase-caption div:last-child {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1em;
+}
+
+.showcase aside {
+  width: 100%;
+  max-width: 310px;
+  background-color: var(--very-dark-blue);
+  padding: 1.5em;
+  color: var(--off-white);
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 768px) {
+  .showcase aside {
+    max-width: 100%;
+  }
+}
+
+.showcase aside h2 {
+  font-size: 1.8rem;
+  text-transform: capitalize;
+  color: var(--sft-orange);
+}
+
+.showcase aside section {
+  flex: 1;
+  gap: 1.5em;
+  margin-top: 1.5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.new-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  gap: 0.5em;
+}
+
+.footer {
+  min-height: 100px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    grid-template-columns: unset;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+}
+
+.article {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 1.3em;
+  cursor: pointer;
+}
+
+.article > div:first-child {
+  width: 120px;
+  max-height: 140px;
+}
+
+.article > div:first-child img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.article > div:last-child {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.article > div:last-child h3 {
+  color: var(--grayish-blue);
+  font-size: 1.5rem;
+}
+
+.article > div:last-child h4 {
+  text-transform: capitalize;
+  color: var(--very-dark-blue);
+  font-size: 1rem;
+}
+
+.article:hover > div:last-child h4 {
+  color: var(--sft-red);
+}
