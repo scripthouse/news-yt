@@ -2,6 +2,16 @@
 
 [Read about @font-face rule](https://www.w3schools.com/cssref/css3_pr_font-face_rule.php)
 
+- Remember to tell git who you are by
+
+```bash
+git config --global user.email 'your email'
+git config --global user.name 'your name'
+```
+
+- Also create your github credentials before pushing.
+- - Create a token in developer setting option
+
 ## Style Guide
 
 ### Colors
