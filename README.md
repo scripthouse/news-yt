@@ -40,4 +40,4 @@ git config --global user.name 'your name'
 
 ## Hosting on Github pages.
 
-❤️ Subscribe to my [**Youtube Channel**](htps://www.youtube.com/@trickthevick)
+❤️ Subscribe to my [**Youtube Channel**](https://www.youtube.com/@trickthevick)
